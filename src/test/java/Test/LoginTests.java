@@ -1,13 +1,15 @@
 package Test;
 
 import Base.BaseTest;
-import org.openqa.selenium.Alert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class loginTests extends BaseTest {
+public class LoginTests extends BaseTest {
+    private static final Logger log = LoggerFactory.getLogger(LoginTests.class);
+
     @BeforeMethod
     public void pageSetUp() {
         driver.navigate().to("https://www.saucedemo.com/");
@@ -50,6 +52,15 @@ public class loginTests extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/");
         Assert.assertEquals(loginPage.getErrorMessageText(), loginPage.expectedErrorMsgNoPassword());
         Assert.assertTrue(loginPage.isLoginButtonVisible());
+    }
+    @Test(priority = 5)
+    public void logout() throws InterruptedException {
+        loginPage.loginWithValidCredentials();
+        inventoryPage.clickLogoutFromMenu();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/");
+        Assert.assertTrue(loginPage.loginButton.isDisplayed());
+        Assert.assertFalse(inventoryPage.isBurgerMenuButtonVisible());
+
     }
 
 

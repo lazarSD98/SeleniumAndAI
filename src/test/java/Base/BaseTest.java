@@ -1,9 +1,8 @@
 package Base;
 
 import Pages.LoginPage;
-import Pages.inventoryPage;
+import Pages.InventoryPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +20,7 @@ public class BaseTest {
     public WebDriverWait wait;
     public JavascriptExecutor js;
     public LoginPage loginPage;
-    public inventoryPage inventoryPage;
+    public InventoryPage inventoryPage;
     ChromeOptions options = new ChromeOptions();
 
 
@@ -42,6 +41,6 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         js = ((JavascriptExecutor) driver);
         loginPage = new LoginPage(driver);
-        inventoryPage=new inventoryPage(driver);
+        inventoryPage=new InventoryPage(driver);
     }
 }
