@@ -51,10 +51,7 @@ public class loginTests extends BaseTest {
         Assert.assertEquals(loginPage.getErrorMessageText(), loginPage.expectedErrorMsgNoPassword());
         Assert.assertTrue(loginPage.isLoginButtonVisible());
     }
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
+
 
 }
 
