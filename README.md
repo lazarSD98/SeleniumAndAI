@@ -25,6 +25,7 @@ This project contains automated tests for [https://www.saucedemo.com/](https://w
 - Java  
 - Selenium  
 - Page Factory
+- chatGPT
 
 ---
 
