@@ -76,12 +76,7 @@ public class LoginPage {
         insertValidUsername();
         inserValidPassword();
         clickLoginButton();
-        try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept();  // Clicks OK on the alert
-        } catch (NoAlertPresentException e) {
-            // Alert not present – continue silently
-        }
+
     }
 
     public void inserInvalidUsername() {
@@ -114,7 +109,6 @@ public class LoginPage {
         try {
             return loginButton.isDisplayed();  // returns true if visible
         } catch (Exception e) {
-            // If any exception happens (like NoSuchElementException), treat as not visible
             return false;
         }
     }
