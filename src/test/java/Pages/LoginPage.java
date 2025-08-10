@@ -14,7 +14,7 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-//***WebElements***/
+/***WebElements***/
 
     @FindBy(id = "user-name")
     public WebElement usernameField;
@@ -26,7 +26,7 @@ public class LoginPage {
     private WebElement errorMessageContainer;
 
 
-    //***Methods***//
+    /***Methods***/
 
 
     public static String getValidUsername() {

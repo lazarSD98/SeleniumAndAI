@@ -1,5 +1,6 @@
 package Base;
 
+import Pages.CartPage;
 import Pages.LoginPage;
 import Pages.InventoryPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,7 @@ public class BaseTest {
     public JavascriptExecutor js;
     public LoginPage loginPage;
     public InventoryPage inventoryPage;
+    public CartPage cartPage;
     ChromeOptions options = new ChromeOptions();
 
 
@@ -42,5 +44,6 @@ public class BaseTest {
         js = ((JavascriptExecutor) driver);
         loginPage = new LoginPage(driver);
         inventoryPage=new InventoryPage(driver);
+        cartPage = new CartPage(driver);
     }
 }
